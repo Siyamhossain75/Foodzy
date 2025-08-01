@@ -3,6 +3,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import productBanner from '../../assets/images/div.banner-img.png'
 import Product from '../Shared/Product';
 import { products } from '../../Data/popularProductData';
+import Title from '../Shared/Title';
 
 const PopularProduct = () => {
     const category =["all","Snacks","Vegetable", "Fruit","Bekary"]
@@ -10,11 +11,9 @@ const PopularProduct = () => {
     return (
         <div className='container mx-auto'>  
 
-      <div className='text-center'>
-            <h1 className='text-5xl font-bold'>Popular Products</h1>
-            <p className='max-w-lg mx-auto mt-4 text-black/70'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore lacus vel facilisis.</p>
-        </div>
+      <Title title={"Popular Product"}
+      subtitle={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore lacus vel facilisis."}
+      ></Title>
         
 
 <div className="grid grid-cols-4 gap-5 mt-10">
