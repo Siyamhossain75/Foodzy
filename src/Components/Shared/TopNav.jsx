@@ -4,14 +4,15 @@ import { IoCafeOutline, IoCallOutline } from 'react-icons/io5';
 import { NavLink } from 'react-router-dom';
 
 
-const TopNav = () => {
-            const route = [
+             export const route = [
             {name :"About",Link:"/about"},
             {name:"Home",Link:"/"},
             {name :"Products",Link:"/products"},
             {name :"Blog",Link:"/blog"},
             {name :"FAQ",Link:"/faq"},
-        ]
+        ];
+const TopNav = () => {
+           
 
     return (
         <div className='flex container mx-auto px-5 py-4 justify-between items-center    '>

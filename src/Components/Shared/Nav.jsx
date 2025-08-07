@@ -39,7 +39,7 @@ const Nav = () => {
 
                 <div className='flex rounded-md W-[500PX]'>
                 
-                    <input type="text" className='flex-1 rounded-l-md border focus:border-2 border-[#64B496] focus:outline border-[#64B496] p-4
+              <input type="text" className='flex-1 rounded-l-md border focus:border-2 border-[#64B496] focus:outline-[#64B496] p-4
                 'placeholder='Sarch For Items' />
                 
                 <div className="relative">
