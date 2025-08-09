@@ -6,7 +6,7 @@ import { TbTruckDelivery } from 'react-icons/tb';
 
 const Service = () => {
     return (
-        <div className='grid mt-20 container mx-auto grid-cols-4 gap-5'>
+        <div className='grid mt-20 container px-10 mx-auto grid-cols-1 lg:grid-cols-4 gap-5'>
             <div className='bg-[#F7F7F8] flex flex-col items-center justify-center p-10 text-center w-full '>
                 <GiBoxUnpacking className='text-5xl '></GiBoxUnpacking>
                 <h2 className='font-semibold text-2xl mt-2'>Product packing</h2>

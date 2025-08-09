@@ -6,7 +6,7 @@ import Rating from 'react-rating';
 
 const Product = ({item}) => {
     return (
-        <div className='p-5 border-[#E9E9E9]'>
+        <div className='p-5 border-[#dbd5d5]'>
             <div className='relative'>
            <img className='w-full ' src={item?.image} alt="" />
             <div className='absolute p-2 rounded-full -bottom-3 left-1/2 -translate-x-1/2 text-p bg-[#E9E9E9]'>
