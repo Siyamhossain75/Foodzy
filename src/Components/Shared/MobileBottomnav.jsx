@@ -9,7 +9,7 @@ const MobileBottomnav = () => {
         <div className=' lg:hidden'>
             <ul className='flex justify-between text-white px-4 bg-p fixed w-full bottom-0 py-3 gap-5'> 
          <li className='flex flex-1 flex-col items-center gap-2'>
-            <FaHome className='text2xl'></FaHome>Wishlist</li>
+            <FaHome className='text2xl'></FaHome>Home</li>
          <li className='flex flex-1 flex-col items-center gap-2'>
             < FaHeart className='text2xl'></FaHeart>Wishlist</li>
           <li className='flex flex-1 flex-col items-center gap-2'>
