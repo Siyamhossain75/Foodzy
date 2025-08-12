@@ -34,13 +34,13 @@ breakpoints={{
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 4,
+            slidesPerView: 3,
             spaceBetween: 50,
           },  }}
         spaceBetween={30}
         freeMode={true}
         autoplay ={
-          {delay : 500}
+          {delay : 1100}
         }
         pagination={{
           clickable: true,
@@ -49,7 +49,7 @@ breakpoints={{
         className="mySwiper !pt-20"
       >
        {
-        Array.from({length :5}).map(() => <>
+        Array.from({length :3}).map(() => <>
             <SwiperSlide> 
                <div className='h-[300px] mb-20 w-[400px] flex flex-col justify-start items-center border border-gray-300'>
                <div className=' p-5  border-l-gray-300 border-l border-b-gray-300 border-b border border-white -rotate-45 -mt-18 bg-white rounded-full w-fit '>
