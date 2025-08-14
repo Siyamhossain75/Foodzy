@@ -10,12 +10,12 @@ const Banner = () => {
             className="bg-center bg-cover flex justify-between  lg:flex-row items-center"
         >
             {/* Text Section */}
-            <div className="text-white max-w-lg text-center lg:text-left">
-                <p className="text-lg md:text-xl text-blue-200">Super Delicious</p>
-                <h1 className="text-2xl md:text-4xl font-bold leading-tight">
+            <div className="text-white max-w-lg text-center lg:text-left lg:space-y-6 lg:mx-auto lg:max-w-[400px]">
+                <p className="text-lg lg:text-xl md:text-xl text-white/70">Super Delicious</p>
+                <h1 className="text-2xl md:text-5xl font-bold leading-tight">
                     THE BEST WAY TO STUFF YOUR WALLET.
                 </h1>
-                <p className="text-sm lg:text-base mt-2">Today's Best Deal</p>
+                <p className="text-sm mt-2 lg:text-2xl lg:font-bold">Today's Best Deal</p>
                 <div className="mt-4 inline-block px-4 py-2 bg-white text-black font-bold rounded-full">
                     50% OFF
                 </div>

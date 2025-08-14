@@ -14,6 +14,9 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Autoplay, FreeMode, Pagination } from 'swiper/modules';
+import Rating from 'react-rating';
+import { IoStarOutline } from 'react-icons/io5';
+import { IoIosStar } from 'react-icons/io';
 const Testimonial = () => {
     return (
         <div className='mt-20 container mx-auto'>
@@ -60,6 +63,12 @@ breakpoints={{
                 <p className='text-black/70 mt-5 text-center'>“eiusmpsu dolor sit amet, conse cte tur <br />
                     ng elit, sed do eiusmod tem lacus vel <br />
                     facilisis.”</p>
+                    <Rating emptySymbol={<IoStarOutline className='text-p'></IoStarOutline>}
+                                fullSymbol={<IoIosStar className='text-p'></IoIosStar>}
+                                readonly
+                                initialRating={4} >
+                                
+                                </Rating>
                 </div>
                 </SwiperSlide>
 
@@ -73,6 +82,12 @@ breakpoints={{
                 <p className='text-black/70 mt-5 text-center'>“eiusmpsu dolor sit amet, conse cte tur <br />
                     ng elit, sed do eiusmod tem lacus vel <br />
                     facilisis.”</p>
+                    <Rating emptySymbol={<IoStarOutline className='text-p'></IoStarOutline>}
+                                fullSymbol={<IoIosStar className='text-p'></IoIosStar>}
+                                readonly
+                                initialRating={4} >
+                                
+                                </Rating>
                 </div>
                 </SwiperSlide>
                 <SwiperSlide>
@@ -85,6 +100,12 @@ breakpoints={{
                 <p className='text-black/70 mt-5 text-center'>“eiusmpsu dolor sit amet, conse cte tur <br />
                     ng elit, sed do eiusmod tem lacus vel <br />
                     facilisis.”</p>
+                    <Rating emptySymbol={<IoStarOutline className='text-p'></IoStarOutline>}
+                                fullSymbol={<IoIosStar className='text-p'></IoIosStar>}
+                                readonly
+                                initialRating={4} >
+                                
+                                </Rating>
                 </div>
                 </SwiperSlide>
 

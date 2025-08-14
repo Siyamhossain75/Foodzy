@@ -6,6 +6,8 @@ import BannerDiscount from './BannerDiscount';
 import Service from './Service';
 import Testimonial from './Testimonial';
 import Food from './Food';
+import Deals from './Deals';
+import News from './News';
 
 const Home = () => {
     return (
@@ -16,8 +18,11 @@ const Home = () => {
         <PopularProduct></PopularProduct>
         <BannerDiscount></BannerDiscount>
         <Service></Service>
+        <Deals></Deals>
         <Food></Food>
+    
         <Testimonial></Testimonial>
+        <News></News>
         </div>
     ); 
 }; 
