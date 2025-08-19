@@ -10,7 +10,7 @@ const Banner = () => {
             className="bg-center bg-cover flex justify-between  lg:flex-row items-center"
         >
             {/* Text Section */}
-            <div className="text-white max-w-lg text-center lg:text-left lg:space-y-6 lg:mx-auto lg:max-w-[400px]">
+            <div className="text-white max-w-lg text-center lg:ml-20 lg:text-left lg:space-y-6 lg:mx-auto lg:max-w-[400px]">
                 <p className="text-lg lg:text-xl md:text-xl text-white/70">Super Delicious</p>
                 <h1 className="text-2xl md:text-5xl font-bold leading-tight">
                     THE BEST WAY TO STUFF YOUR WALLET.
