@@ -7,7 +7,7 @@ const News = () => {
     return (
        <div className='my-20  mx-auto container px-10'>
           <Title title={"Latest News"} subtitle={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore lacus vel facilisis."}></Title>
-        <div className='grid grid-cols-3 gap-5'>
+        <div className='grid lg:grid-cols-3 gap-5'>
         
           <div className="card shadow-sm">
             <div className="card-body">
