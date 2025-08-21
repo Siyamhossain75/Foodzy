@@ -8,6 +8,7 @@ import Testimonial from './Testimonial';
 import Food from './Food';
 import Deals from './Deals';
 import News from './News';
+import Footer from '../Shared/Footer';
 
 const Home = () => {
     return (
@@ -23,6 +24,7 @@ const Home = () => {
     
         <Testimonial></Testimonial>
         <News></News>
+        <Footer></Footer>
         </div>
     ); 
 }; 
