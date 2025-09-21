@@ -3,6 +3,8 @@ import { Outlet } from 'react-router-dom';
 import Header from '../Components/Shared/Header';
 import MobileHeader from '../Components/Shared/MobileHeader';
 import MobileBottomnav from '../Components/Shared/MobileBottomnav';
+import Food from '../Components/home/Food';
+import Footer from '../Components/Shared/Footer';
 
 const MainLayout = () => {
     return (
@@ -13,6 +15,7 @@ const MainLayout = () => {
          <MobileHeader></MobileHeader>
          <Outlet></Outlet>
          <MobileBottomnav></MobileBottomnav>
+         <Footer></Footer>
         </div>
     );
 };
