@@ -5,8 +5,8 @@ import { NavLink } from 'react-router-dom';
 
 
              export const route = [
-            {name :"About",Link:"/about"},
             {name:"Home",Link:"/"},
+            {name :"About",Link:"/about"},
             {name :"Products",Link:"/products"},
             {name :"Blog",Link:"/blog"},
             {name :"FAQ",Link:"/faq"},

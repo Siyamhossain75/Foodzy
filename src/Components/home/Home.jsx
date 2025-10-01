@@ -3,7 +3,7 @@ import Banner from './Banner';
 import Discount from './Discount';
 import PopularProduct from './PopularProduct';
 import BannerDiscount from './BannerDiscount';
-import Service from './Service';
+import Service from '../Shared/Service';
 import Testimonial from './Testimonial';
 import Food from './Food';
 import Deals from './Deals';
@@ -24,7 +24,6 @@ const Home = () => {
     
         <Testimonial></Testimonial>
         <News></News>
-        <Footer></Footer>
         </div>
     ); 
 }; 

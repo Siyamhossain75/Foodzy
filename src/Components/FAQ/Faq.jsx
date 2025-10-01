@@ -1,5 +1,6 @@
 import React from 'react';
 import fi from '../../assets/images/text.png'
+import Page from '../Shared/Page';
 const Faq = () => {
     
   const faqData = [
@@ -34,8 +35,9 @@ const Faq = () => {
   ]
 
     return (
-        <div className='container my-20 mx-auto'>
-            <div className='flex gap-5'>
+        <div className=''>
+          <Page></Page>
+            <div className='flex gap-5 container my-20 mx-auto'>
                 <img src={fi} className='flex-1' alt="" />
                 <div className="flex-1 space-y-3">
                 {
