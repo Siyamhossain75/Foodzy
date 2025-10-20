@@ -35,9 +35,9 @@ const Faq = () => {
   ]
 
     return (
-        <div className=''>
+        <div className='p-5'>
           <Page></Page>
-            <div className='flex gap-5 container my-20 mx-auto'>
+            <div className='flex flex-col lg:flex-row  gap-5 container mt-10 lg:my-20 mx-auto'>
                 <img src={fi} className='flex-1' alt="" />
                 <div className="flex-1 space-y-3">
                 {

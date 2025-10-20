@@ -4,6 +4,7 @@ import Home from "../Components/home/Home";
 import About from "../Components/about/About";
 import Error from "../Components/Errorpage/Error.jsx";
 import Faq from "../Components/FAQ/Faq.jsx";
+import Login from "../Components/Auth/Login.jsx";
 const router =createBrowserRouter([
 {
     path:"/",
@@ -19,9 +20,14 @@ const router =createBrowserRouter([
             element:<About></About>
         },
         {
-            path:"faq",
+            path:"/faq",
             element:<Faq></Faq>
         },
+        {
+            path:"/login",
+            element:<Login></Login>
+        }
+
 
     ]
 

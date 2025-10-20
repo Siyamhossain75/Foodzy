@@ -4,6 +4,8 @@ import logo from "../../assets/Layout/Logo.png"
 import { FaSearch } from 'react-icons/fa';
 import { CiHeart } from 'react-icons/ci';
 import { FiUser } from 'react-icons/fi';
+import { Link, NavLink } from 'react-router-dom';
+import Login from '../Auth/Login';
 
 const Nav = () => {
     const [isDropDownOpen , setIsDropDownOpen] = useState(false)
@@ -58,7 +60,9 @@ const Nav = () => {
         <div className=''>
             <ul className='flex gap-5'> 
                 <li className='flex items-center gap-2'><CiHeart></CiHeart>Wishlist</li>
-                <li className='flex items-center gap-2'><FiUser></FiUser>Account</li> 
+                <li className='flex items-center gap-2'>
+                <Link to={Login}></Link>
+                    <FiUser></FiUser>Account</li> 
                 <li className='flex items-center gap-2'><IoCartOutline></IoCartOutline> Cart</li>
             </ul>
         </div>

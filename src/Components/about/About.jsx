@@ -9,7 +9,7 @@ const About = () => {
         <div className='mb-5'>
             <Page></Page>
     
-                        <div className='container mx-auto flex gap-5 my-20'>
+                        <div className='container flex-col lg:flex-row mx-auto flex gap-5 my-20'>
                         <div className='flex-1 space-y-5 '>
                     <h1 className='text-[40px] font-semibold'>About Foodzy</h1>
                     <p className='text-lg text-black/70'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam repellendus aut mollitia? Repellendus ad aliquam enim dignissimos  ipsum assumenda dignissimos?</p>
