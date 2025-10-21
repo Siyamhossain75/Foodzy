@@ -5,6 +5,9 @@ import About from "../Components/about/About";
 import Error from "../Components/Errorpage/Error.jsx";
 import Faq from "../Components/FAQ/Faq.jsx";
 import Login from "../Components/Auth/Login.jsx";
+import Products from "../Components/Products/Products.jsx";
+import Blog from "../Components/Blog/Blog.jsx";
+
 const router =createBrowserRouter([
 {
     path:"/",
@@ -26,11 +29,19 @@ const router =createBrowserRouter([
         {
             path:"/login",
             element:<Login></Login>
+        },
+        {
+            path:"/products",
+            element:<Products></Products>
+        },
+        {
+            path:"/blog",
+            element:<Blog></Blog>
         }
 
 
     ]
 
-} ,
+} 
 ])  
-export default router
+export default router ;

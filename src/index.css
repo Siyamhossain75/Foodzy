@@ -28,4 +28,7 @@
   --color-primary:#F53E32;
 
 }
+.range-slider__thumb , .range-slider__range{
+  background-color: #F53E32 !important;
+}
 

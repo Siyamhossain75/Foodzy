@@ -60,9 +60,13 @@ const Nav = () => {
         <div className=''>
             <ul className='flex gap-5'> 
                 <li className='flex items-center gap-2'><CiHeart></CiHeart>Wishlist</li>
+                
+            
+                 <NavLink to={Login}>
                 <li className='flex items-center gap-2'>
-                <Link to={Login}></Link>
-                    <FiUser></FiUser>Account</li> 
+                 <FiUser></FiUser>Account</li>
+                 </NavLink>
+                   
                 <li className='flex items-center gap-2'><IoCartOutline></IoCartOutline> Cart</li>
             </ul>
         </div>
