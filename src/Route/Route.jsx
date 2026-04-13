@@ -3,10 +3,11 @@ import MainLayout from "../Layout/MainLayout";
 import Home from "../Components/home/Home";
 import About from "../Components/about/About";
 import Error from "../Components/Errorpage/Error.jsx";
-import Faq from "../Components/FAQ/Faq.jsx";
 import Login from "../Components/Auth/Login.jsx";
 import Products from "../Components/Products/Products.jsx";
 import Blog from "../Components/Blog/Blog.jsx";
+import Cart from "../Components/cart/Cart.jsx";
+import Checkout from "../Components/Checkoutpage/Checkout.jsx";
 
 const router =createBrowserRouter([
 {
@@ -23,12 +24,16 @@ const router =createBrowserRouter([
             element:<About></About>
         },
         {
-            path:"/faq",
-            element:<Faq></Faq>
-        },
-        {
             path:"/login",
             element:<Login></Login>
+        },
+        {
+            path:"/cart",
+            element:<Cart></Cart>
+        },
+        {
+            path:"/checkoutpage",
+            element:<Checkout></Checkout>
         },
         {
             path:"/products",

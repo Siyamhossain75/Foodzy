@@ -1,165 +1,102 @@
 import React from 'react';
-import Page from '../Shared/Page';
-import { FiFilter } from 'react-icons/fi';
-import { MdOutlineGridOn } from 'react-icons/md';
-import { LuLayoutList } from 'react-icons/lu';
-import { IoChevronDown } from 'react-icons/io5';
-import RangeSlider from "react-range-slider-input";
-import "react-range-slider-input/dist/style.css";
+// Using react-icons to match your RoomInspiration style
+import { BsFilter, BsGrid3X3Gap, BsListUl } from 'react-icons/bs';
+import { Trophy, ShieldCheck, Truck, Headset } from 'lucide-react';
+
+// IMPORT YOUR DOWNLOADED IMAGES HERE
+import shopBanner from '../../assets/Layout/Group78.png';
+import p1 from '../../assets/images/Rectangle24.png'; 
+import p2 from '../../assets/images/Rectangle25.png';
+// ... import other product images as needed
 
 const Products = () => {
-            const filterOptions =[
-            {
-               name: "Juice & Drinks",
-               productCount :20
-            },
-            {
-               name: "Dairy & Milk",
-               productCount :17
-            },
-            {
-               name: "Snack & Spices",
-               productCount :22
-            },
-        ]
+    const products = [
+        { id: 1, name: "Syltherine", desc: "Stylish cafe chair", price: "Rp 2.500.000", oldPrice: "Rp 3.500.000", discount: "-30%", image: p1 },
+        { id: 2, name: "Leviosa", desc: "Stylish cafe chair", price: "Rp 2.500.000", image: p2, showHover: true },
+        { id: 3, name: "Lolito", desc: "Luxury big sofa", price: "Rp 7.000.000", oldPrice: "Rp 14.000.000", discount: "-50%", image: p1 },
+        { id: 4, name: "Respira", desc: "Outdoor bar table and stool", price: "Rp 500.000", tag: "New", image: p2 },
+        // Repeat for 16 items as shown in your image
+    ];
 
-         const filterColour=[
-            {
-               name: "Blue",
-               colour :"#0000FF"
-            },
-            {
-               name: "Red",
-               colour :"#FF0000"
-            },
-            {
-               name: "Green",
-               colour :"#008000"
-            },
-        ] 
-         const filterWeight=[
-            {
-               name: "2Kg Pack",
-               
-            },
-            {
-               name: "20Kg Pack",
-               
-            },
-            {
-               name: "56Kg Pack"
-            
-            },
-        ] 
-        const tags = [
-           "Vegetables ", "Dry Fruits", "Juice" , "Food" , "Snacks" , "Chocolate" ,"Barger"
-        ]
+    const features = [
+        { icon: <Trophy size={40} />, title: "High Quality", desc: "crafted from top materials" },
+        { icon: <ShieldCheck size={40} />, title: "Warranty Protection", desc: "Over 2 years" },
+        { icon: <Truck size={40} />, title: "Free Shipping", desc: "Order over 150 $" },
+        { icon: <Headset size={40} />, title: "24 / 7 Support", desc: "Dedicated support" }
+    ];
+
     return (
+        <div className="font-poppins">
+            {/* 1. Header Banner */}
+            <div className="relative h-[316px] flex flex-col items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${shopBanner})` }}>
+                <div className="absolute inset-0 bg-white/20 backdrop-blur-[2px]"></div>
+                <div className="relative z-10 text-center">
+                </div>
+            </div>
 
-        <div>
-            <Page></Page>
-           <div className='container flex pt-20 gap-5  items-start w-full mx-auto px-10 my-10'>
-           {/* category */}
-           <div className='bg-[#E9E9E9] p-5 w-1/4 rounded-md'>
-           <h1 className='text-xl font-semibold font-sans'>Product Category</h1>
-           <ul className='space-y-2 my-5 text-lg '>
-            {
-                filterOptions.map((item , idx ) => (
-                <li className='flex justify-between items-center' key={idx }>
-                   <p className='flex gap-2 '>
-                     <input className='checkbox bg-white checked:bg-white' type="checkbox" />
-                    <span>{item.name}</span>
+            {/* 2. Filter Bar */}
+            <div className="bg-[#F9F1E7] py-6 px-4 lg:px-20 flex flex-wrap items-center justify-between gap-4">
+                <div className="flex items-center gap-6 border-r border-[#9F9F9F] pr-6">
+                    <button className="flex items-center gap-2 text-xl"><BsFilter /> Filter</button>
+                    <button className="text-xl"><BsGrid3X3Gap /></button>
+                    <button className="text-xl border-l border-[#9F9F9F] pl-4"><BsListUl /></button>
+                    <p className="text-sm">Showing 1–16 of 32 results</p>
+                </div>
+                <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2">Show <span className="bg-white px-4 py-3 text-[#9F9F9F]">16</span></div>
+                    <div className="flex items-center gap-2">Short by <span className="bg-white px-4 py-3 text-[#9F9F9F]">Default</span></div>
+                </div>
+            </div>
 
-                   </p>
-                                    
-                   <span>[{item.productCount}]</span>
-                </li>
-
-                ))
-            }
-                       </ul>
-
-            {/* filter by price */}
-            <h1 className='text-xl mt-10 font-semibold font-sans'>Filter by price</h1>
-            <div className='mt-10'>    
-                        <RangeSlider 
-                        onInput={(value) =>{
-
-                        }}
-                        min={0} max={100} className=''></RangeSlider>
-                        <h1 className='text-xl mt-10 font-semibold font-sans'> price 50-100$</h1>
+            {/* 3. Product Grid */}
+            <div className="container mx-auto px-4 lg:px-20 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {products.map((product) => (
+                    <div key={product.id} className="group relative bg-[#F4F5F7]">
+                        <div className="relative">
+                            <img src={product.image} alt={product.name} className="w-full h-[300px] object-cover" />
+                            {product.discount && <div className="absolute top-5 right-5 bg-[#E97171] text-white rounded-full w-12 h-12 flex items-center justify-center">{product.discount}</div>}
+                            {product.tag && <div className="absolute top-5 right-5 bg-[#2EC1AC] text-white rounded-full w-12 h-12 flex items-center justify-center">{product.tag}</div>}
+                            
+                            {/* Hover Overlay */}
+                            <div className="absolute inset-0 bg-[#3A3A3A]/70 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4">
+                                <button className="bg-white text-[#B88E2F] px-10 py-3 font-semibold">Add to cart</button>
+                                <div className="flex gap-4 text-white font-semibold">
+                                    <span>Share</span><span>Compare</span><span>Like</span>
+                                </div>
+                            </div>
                         </div>
-                        <h1 className='text-xl mt-10 font-semibold font-sans'>Product Colour</h1>
-
-             <ul className='space-y-2 my-5 text-lg '>
-            {
-                filterColour.map((item , idx ) => (
-                <li className='flex justify-between items-center' key={idx }>
-                   <p className='flex gap-2 '>
-                     <input className='checkbox bg-white checked:bg-white' type="checkbox" />
-                    <span>{item.name}</span>
-
-                   </p>
-                                    
-                   <span className='h-5 w-5 rounded-sm ' style={{backgroundColor : item?.colour}}></span>
-                </li>
-
-                ))
-            }
-                       </ul>
-
-                       <h1 className='text-xl mt-10 font-semibold font-sans'>Product Weight</h1>
-
-             <ul className='space-y-2 my-5 text-lg '>
-            {
-                filterWeight.map((item , idx ) => (
-                <li className='flex justify-between items-center' key={idx }>
-                   <p className='flex gap-2 '>
-                     <input className='checkbox bg-white checked:bg-white' type="checkbox" />
-                    <span className='text-black/70'>{item.name}</span>
-
-                   </p>
-                                    
-                </li>
-
-                ))
-            }
-         </ul> 
-          
-              
-             <h1 className='text-xl mt-10 font-semibold font-sans'>Product Tages</h1>
-             <div className='mt-5 flex gap-3 flex-wrap'>
-                {
-                    tags.map((item ,index) =>{
-                    return <p className='px-4 py-2 bg-white rounded-md text-black/70'>{item}</p>
-
-                    })
-
-                    
-}
-             </div>
-           
-           </div>
-
-             <div className='p-2 w-3/4  bg-[#E9E9E9] flex justify-between items-center rounded-md'>
-            <div className='flex gap-2 '>
-            <FiFilter className='bg-white p-1 text-3xl rounded-md'></FiFilter>
-            <MdOutlineGridOn className='bg-p text-white p-1 text-3xl rounded-md'></MdOutlineGridOn>
-            <LuLayoutList className='bg-white p-1 text-3xl rounded-md'></LuLayoutList>
-            <p className=' text-black/70 ml-10'>We found 25 items for you</p>
-            </div>
-            <div className=''>
-                <details className="dropdown dropdown-end">
-  <summary className="btn m-1 text-black/70">Sort by : Featured <IoChevronDown></IoChevronDown></summary>
-  <ul className="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-    <li><a>Price (accending)</a></li>
-    <li><a>Price (Decending)</a></li>
-  </ul>
-</details>
+                        <div className="p-4">
+                            <h3 className="text-2xl font-bold text-[#3A3A3A]">{product.name}</h3>
+                            <p className="text-[#898989] font-medium my-2">{product.desc}</p>
+                            <div className="flex items-center justify-between">
+                                <span className="text-xl font-bold text-[#3A3A3A]">{product.price}</span>
+                                {product.oldPrice && <span className="text-[#B0B0B0] line-through">{product.oldPrice}</span>}
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
 
+            {/* 4. Pagination */}
+            <div className="flex justify-center gap-8 py-10">
+                <button className="w-12 h-12 bg-[#B88E2F] text-white rounded-[10px]">1</button>
+                <button className="w-12 h-12 bg-[#F9F1E7] text-black rounded-[10px]">2</button>
+                <button className="w-12 h-12 bg-[#F9F1E7] text-black rounded-[10px]">3</button>
+                <button className="px-6 h-12 bg-[#F9F1E7] text-black rounded-[10px]">Next</button>
             </div>
-           </div>
+
+            {/* 5. Features Footer */}
+            <div className="bg-[#FAF3EA] py-24 px-4 lg:px-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {features.map((f, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                        <span className="text-black">{f.icon}</span>
+                        <div>
+                            <h4 className="text-2xl font-bold text-[#242424]">{f.title}</h4>
+                            <p className="text-[#898989] font-medium">{f.desc}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

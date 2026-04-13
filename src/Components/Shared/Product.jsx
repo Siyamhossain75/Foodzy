@@ -14,7 +14,7 @@ const Product = ({item}) => {
             </div>
             </div>
             <div className='p-5 space-y-2 text-center'>
-            <p>Vegetables</p>
+            <p>Lolito</p>
              <div className='flex items-center gap-1 justify-center'>
                 <Rating emptySymbol={<IoStarOutline className='text-p'></IoStarOutline>}
             fullSymbol={<IoIosStar className='text-p'></IoIosStar>}
@@ -24,8 +24,7 @@ const Product = ({item}) => {
             </Rating>
             <span className='text-black/70'>({item.rating})</span>
             </div>
-            <h2 className='text-2xl font-medium font-poppins'>Fresh organic villa farm lomon
-            500gm pack</h2>
+            <h2 className='text-2xl font-medium font-poppins'>Luxury big sofa</h2>
              <div className='flex items-center justify-center gap-3'>
                 <span className='font-bold text-p text-xl'>$120.25</span>
                <del className=' text-black/70 text-2xl'>$120.25</del>

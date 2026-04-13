@@ -9,7 +9,6 @@ import { NavLink } from 'react-router-dom';
             {name :"About",Link:"/about"},
             {name :"Products",Link:"/products"},
             {name :"Blog",Link:"/blog"},
-            {name :"FAQ",Link:"/faq"},
             
 
         ];

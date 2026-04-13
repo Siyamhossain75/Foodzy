@@ -4,21 +4,19 @@ import productBanner from '../../assets/images/div.banner-img.png'
 import Product from '../Shared/Product';
 import { products } from '../../Data/popularProductData';
 import Title from '../Shared/Title';
-
+import productimg from "../../assets/Layout/OurProducts.png"
 const PopularProduct = () => {
     const category =["all","Snacks","Vegetable", "Fruit","Bekary"]
 
     return (
         <div className='container px-10 mx-auto'>  
 
-      <Title title={"Popular Product"}
+      <Title title={"Our Products"}
       subtitle={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore lacus vel facilisis."}
       ></Title>
-        
-
-<div className="grid grid-cols-1 lg:grid-cols-4 mt-10 gap-y-5 lg:gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-3 mt-10 gap-y-5 lg:gap-5">
                         
-                        <div className='space-y-2 w-full text-center'>
+                        {/* <div className='space-y-2 w-full text-center'>
                 {category.map((item , idx ) =>(
                     <div className='p-3 flex justify-between bg-[#E9E9E9]' key={idx}>
                      <h2 className='text-xl font-semibold'>{item}</h2>
@@ -35,7 +33,7 @@ const PopularProduct = () => {
                      <button className='btn bg-p border-0 text-white font-semibold mt-3'>Shop Now</button>
                    </div> 
                      </div>
-                     </div>
+                     </div> */}
                     <div className=' grid grid-cols-1 lg:grid-cols-3 col-span-3 gap-5'>
                  {
                     products.map((item , idx)=> 
@@ -43,8 +41,10 @@ const PopularProduct = () => {
                     )
                  }
                                                    
-                </div> 
+                </div>  
         </div>
+
+
         </div>
     );
 };

@@ -1,40 +1,118 @@
 import React from 'react';
-import { BsCashCoin } from 'react-icons/bs';
-import { GiBoxUnpacking } from 'react-icons/gi';
-import { MdOutlineSupportAgent } from 'react-icons/md';
-import { TbTruckDelivery } from 'react-icons/tb';
 
-const Service = () => {
+// IMPORT YOUR DOWNLOADED IMAGES HERE
+// Adjust these paths to match your assets folder structure
+import img1 from '../../assets/images/Rectangle36.png';
+import img2 from '../../assets/images/Rectangle37.png';
+import img3 from '../../assets/images/Rectangle38.png';
+import img4 from '../../assets/images/Rectangle39.png';
+import img5 from '../../assets/images/Rectangle40.png';
+import img6 from '../../assets/images/Rectangle41.png';
+import img7 from '../../assets/images/Rectangle43.png';
+import img8 from '../../assets/images/Rectangle44.png';
+import img9 from '../../assets/images/Rectangle45.png';
+
+const FurnitureGallery = () => {
     return (
-        <div className='grid mt-20 container mx-auto grid-cols-1 lg:grid-cols-4 gap-5'>
-            <div className='bg-[#F7F7F8] flex flex-col items-center justify-center p-10 text-center w-full '>
-                <GiBoxUnpacking className='text-5xl '></GiBoxUnpacking>
-                <h2 className='font-semibold text-2xl mt-2'>Product packing</h2>
-                <p className='text-black/60 mt-2'>Lorem ipsum dolor sit amet,
-                  consectetur adipisicing.</p>
+        <section className="py-16 bg-white overflow-hidden">
+            {/* Header Section */}
+            <div className="text-center mb-8">
+                <p className="text-[#616161] font-semibold text-lg">Share your setup with</p>
+                <h2 className="text-4xl md:text-5xl font-bold text-[#3A3A3A] mt-2">
+                    #FuniroFurniture
+                </h2>
             </div>
-            <div className='bg-[#F7F7F8] flex flex-col items-center justify-center p-10 text-center w-full '>
-                <MdOutlineSupportAgent className='text-5xl'></MdOutlineSupportAgent>
-                <h2 className='font-semibold text-2xl mt-2'>24X7 Support</h2>
-                <p className='text-black/60 mt-2'>Lorem ipsum dolor sit amet,
-                  consectetur adipisicing.</p>
-            </div>
-            <div className='bg-[#F7F7F8] flex flex-col items-center justify-center p-10 text-center w-full '>
-                <TbTruckDelivery className='text-5xl'></TbTruckDelivery>
 
-                <h2 className='font-semibold text-2xl mt-2'>Delivery in 5 Days</h2>
-                <p className='text-black/60 mt-2'>Lorem ipsum dolor sit amet,
-                  consectetur adipisicing.</p>
-            </div>
-            <div className='bg-[#F7F7F8] flex flex-col items-center justify-center p-10 text-center w-full '>
-                <BsCashCoin className='text-5xl'></BsCashCoin>
+            {/* Masonry-style Layout */}
+            {/* Using columns-1 to columns-4 creates the staggered height effect from your design */}
+            <div className="container mx-auto px-4">
+                <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
+                    
+                    {/* Image 1 */}
+                    <div className="relative overflow-hidden group break-inside-avoid">
+                        <img 
+                            src={img1} 
+                            alt="Gallery 1" 
+                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" 
+                        />
+                    </div>
 
-                <h2 className='font-semibold text-2xl mt-2'>Payment Secure</h2>
-                <p className='text-black/60 mt-2'>Lorem ipsum dolor sit amet,
-                  consectetur adipisicing.</p>
+                    {/* Image 2 */}
+                    <div className="relative overflow-hidden group break-inside-avoid">
+                        <img 
+                            src={img2} 
+                            alt="Gallery 2" 
+                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" 
+                        />
+                    </div>
+
+                    {/* Image 3 */}
+                    <div className="relative overflow-hidden group break-inside-avoid">
+                        <img 
+                            src={img3} 
+                            alt="Gallery 3" 
+                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" 
+                        />
+                    </div>
+
+                    {/* Image 4 */}
+                    <div className="relative overflow-hidden group break-inside-avoid">
+                        <img 
+                            src={img4} 
+                            alt="Gallery 4" 
+                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" 
+                        />
+                    </div>
+
+                    {/* Image 5 */}
+                    <div className="relative overflow-hidden group break-inside-avoid">
+                        <img 
+                            src={img5} 
+                            alt="Gallery 5" 
+                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" 
+                        />
+                    </div>
+
+                    {/* Image 6 */}
+                    <div className="relative overflow-hidden group break-inside-avoid">
+                        <img 
+                            src={img6} 
+                            alt="Gallery 6" 
+                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" 
+                        />
+                    </div>
+
+                    {/* Image 7 */}
+                    <div className="relative overflow-hidden group break-inside-avoid">
+                        <img 
+                            src={img7} 
+                            alt="Gallery 7" 
+                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" 
+                        />
+                    </div>
+
+                    {/* Image 8 */}
+                    <div className="relative overflow-hidden group break-inside-avoid">
+                        <img 
+                            src={img8} 
+                            alt="Gallery 8" 
+                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" 
+                        />
+                    </div>
+
+                    {/* Image 9 */}
+                    <div className="relative overflow-hidden group break-inside-avoid">
+                        <img 
+                            src={img9} 
+                            alt="Gallery 9" 
+                            className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" 
+                        />
+                    </div>
+
+                </div>
             </div>
-        </div>
+        </section>
     );
 };
 
-export default Service; 
+export default FurnitureGallery;

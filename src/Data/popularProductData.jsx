@@ -1,14 +1,14 @@
- import Product1 from "../../src/assets/images/product-1.png"
- import Product2 from "../../src/assets/images/product-2.png"
- import Product3 from "../../src/assets/images/produc-3.png"
- import Product4 from "../../src/assets/images/product-4.png"
- import Product5 from "../../src/assets/images/product-5.png"
- import Product6 from "../../src/assets/images/product-6.png"
+ import Product1 from "../../src/assets/images/image1.png"
+ import Product2 from "../../src/assets/images/image5.png"
+ import Product3 from "../../src/assets/images/image6.png"
+ import Product4 from "../../src/assets/images/image7.png"
+ import Product5 from "../../src/assets/images/Images.png"
+ import Product6 from "../../src/assets/images/image5.png"
  export const products = [
   { 
     image :Product1,
-    category: "Vegetables",
-    name: "Fresh organic villa farm lemon",
+    category: "Lolito",
+    name: "Luxury big sofa",
     quantity: "500gm pack",
     price: 120.25,
     originalPrice: 123.25,
@@ -16,9 +16,8 @@
   },
   {
     image :Product2,
-    category: "Snacks",
-    name: "Best snacks with hazel nut pack",
-    quantity: "200gm",
+    name: "Syltherine",
+    quantity: "Stylish cafe chair",
     price: 145,
     originalPrice: 150,
     rating: 5.0

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { IoCartOutline, IoChevronDown } from 'react-icons/io5';
-import logo from "../../assets/Layout/Logo.png"
+import logo from "../../assets/Layout/logoo.png"
 import { FaSearch } from 'react-icons/fa';
 import { CiHeart } from 'react-icons/ci';
 import { FiUser } from 'react-icons/fi';
@@ -8,24 +8,24 @@ import { Link, NavLink } from 'react-router-dom';
 import Login from '../Auth/Login';
 
 const Nav = () => {
-    const [isDropDownOpen , setIsDropDownOpen] = useState(false)
-    const foodCategories = [
-  "Fruits",
-  "Vegetables",
-  "Grains",
-  "Dairy",
-  "Protein",
-  "Beverages",
-  "Snacks",
-  "Seafood",
-  "Spices & Herbs",
-  "Baked Goods",
-  "Frozen Foods",
-  "Condiments & Sauces",
-  "Soups & Stews",
-  "Meat & Poultry",
-  "Nuts & Seeds"
-];
+//     const [isDropDownOpen , setIsDropDownOpen] = useState(false)
+//     const foodCategories = [
+//   "Fruits",
+//   "Vegetables",
+//   "Grains",
+//   "Dairy",
+//   "Protein",
+//   "Beverages",
+//   "Snacks",
+//   "Seafood",
+//   "Spices & Herbs",
+//   "Baked Goods",
+//   "Frozen Foods",
+//   "Condiments & Sauces",
+//   "Soups & Stews",
+//   "Meat & Poultry",
+//   "Nuts & Seeds"
+// ];
 
     return (
         <div className="container flex items-center justify-between mx-auto">
@@ -33,13 +33,12 @@ const Nav = () => {
         <div className='flex items-center'>
             <img src={logo}></img>
             <div>
-                <h2 className='capitalize font-bold font-sans text-2xl'> Foodzy</h2>
-                <p className='text-sm font-semibold'> A Treasure of Tastes</p>
+                <h2 className='capitalize font-bold font-sans text-2xl'> Furniro</h2>
 
                 </div>
                 </div>
 
-                <div className='flex rounded-md W-[500PX]'>
+                {/* <div className='flex rounded-md W-[500PX]'>
                 
               <input type="text" className='flex-1 rounded-l-md border focus:border-2 border-[#64B496] focus:outline-[#64B496] p-4
                 'placeholder='Sarch For Items' />
@@ -55,19 +54,23 @@ const Nav = () => {
                 </div>
                 <button className='btn rounded-l-none m-0 outline-0 outline-offset-0 hovere:outline-0  bg-p h-auto text-white'><FaSearch></FaSearch></button>
             
-        </div>
+        </div> */}
         {/* icon start */}
         <div className=''>
             <ul className='flex gap-5'> 
-                <li className='flex items-center gap-2'><CiHeart></CiHeart>Wishlist</li>
+               <Link to={"./checkoutpage"}><li className='flex items-center gap-2'><CiHeart></CiHeart>Check Out</li></Link> 
                 
             
-                 <NavLink to={Login}>
-                <li className='flex items-center gap-2'>
+                 <Link to={"./login"}>
+            <li className='flex items-center gap-2'>
                  <FiUser></FiUser>Account</li>
-                 </NavLink>
+                 </Link>
+                 <Link to={"./cart"}>
+            <li className='flex items-center gap-2'>
+              <IoCartOutline></IoCartOutline> Cart</li>
+
+                 </Link>
                    
-                <li className='flex items-center gap-2'><IoCartOutline></IoCartOutline> Cart</li>
             </ul>
         </div>
         </div>
