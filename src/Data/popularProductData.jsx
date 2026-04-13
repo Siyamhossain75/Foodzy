@@ -1,9 +1,9 @@
  import Product1 from "../../src/assets/images/image1.png"
- import Product2 from "../../src/assets/images/image5.png"
+ import Product2 from "../../src/assets/images/Image5.png"
  import Product3 from "../../src/assets/images/image6.png"
  import Product4 from "../../src/assets/images/image7.png"
  import Product5 from "../../src/assets/images/Images.png"
- import Product6 from "../../src/assets/images/image5.png"
+ import Product6 from "../../src/assets/images/Image5.png"
  export const products = [
   { 
     image :Product1,
