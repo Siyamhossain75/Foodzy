@@ -1,5 +1,6 @@
 import React from 'react';
 import { Trophy, ShieldCheck, Truck, Headset } from 'lucide-react';
+import { Link } from 'react-router-dom'; // Ensure Link is imported for navigation
 
 // IMPORT YOUR DOWNLOADED HERO IMAGE HERE
 import loginHero from '../../assets/Layout/Rectangle1.png'; 
@@ -50,6 +51,16 @@ const LoginPage = () => {
                             <a href="#" className="text-black hover:text-[#B88E2F] transition-colors font-light">
                                 Lost Your Password?
                             </a>
+                        </div>
+
+                        {/* --- NEW SIGN UP OPTION --- */}
+                        <div className="mt-8 pt-8 border-t border-[#D9D9D9] text-center">
+                            <p className="text-[#9F9F9F]">
+                                No account yet? {" "}
+                                <Link to="/signup" className="text-[#B88E2F] font-semibold hover:underline">
+                                    Create an account
+                                </Link>
+                            </p>
                         </div>
                     </form>
                 </div>
