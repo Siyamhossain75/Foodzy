@@ -5,7 +5,7 @@ import { FiUser } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from '../../firebase/Firebase.config';
-import logo from '../../assets/Layout/Logoo.png'; 
+import logo from '../../assets/Layout/logoo.png'; 
 
 const Nav = () => {
     const [user, setUser] = useState(null); // This holds the logged-in user's data
