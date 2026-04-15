@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import { Trophy, ShieldCheck, Truck, Headset } from 'lucide-react';
+import { Trophy, ShieldCheck, Truck, Headset, Loader2, CreditCard, Landmark, Smartphone } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import checkoutHero from '../../assets/Layout/Rectangle1.png'; 
 
 const Checkout = () => {
     const navigate = useNavigate();
-
-    // 1. State for Form Data & Payment Method
-    const [paymentMethod, setPaymentMethod] = useState('bank');
+    const [loading, setLoading] = useState(false);
+    const [paymentMethod, setPaymentMethod] = useState('ssl'); 
     const [formData, setFormData] = useState({
         firstName: '', lastName: '', email: '', phone: '', 
         address: '', city: '', zip: '', country: 'Bangladesh'
@@ -17,36 +16,28 @@ const Checkout = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    // 2. The Redirect Handler
     const handlePlaceOrder = async (e) => {
         e.preventDefault();
+        setLoading(true);
 
-        const orderData = {
-            ...formData,
-            amount: 250000,
-            currency: 'BDT',
-            paymentMethod
-        };
-
-        if (paymentMethod === 'bank') {
-            // Direct success for bank transfers
-            navigate('/order-success');
-        } else {
-            // For SSLCommerz or Stripe, you trigger the redirect logic
-            try {
-                // This would be your real API call to your Node/Firebase backend
-                console.log(`Redirecting to ${paymentMethod} gateway...`, orderData);
-                
-                // Example: window.location.replace(apiResponse.gatewayUrl);
-                alert(`Redirecting to ${paymentMethod === 'ssl' ? 'SSLCommerz (bKash/Nagad)' : 'Stripe'}...`);
-            } catch (error) {
-                alert("Payment initiation failed. Please try again.");
+        // Simulated API and Redirect logic
+        setTimeout(() => {
+            if (paymentMethod === 'bank') {
+                setLoading(false);
+                navigate('/order-success');
+            } else if (paymentMethod === 'ssl') {
+                // REDIRECT TO LOCAL GATEWAY (bKash/Nagad)
+                window.location.href = "https://sandbox.sslcommerz.com/gwprocess/v4/testbox.php";
+            } else {
+                // REDIRECT TO STRIPE (Card)
+                window.location.href = "https://checkout.stripe.com/pay/test_session";
             }
-        }
+        }, 2000);
     };
 
     return (
-        <div className="font-poppins">
+        <div className="font-poppins bg-[#FAFAFA]">
+            {/* Hero Section */}
             <div className="relative h-[316px] flex flex-col items-center justify-center bg-cover bg-center" style={{ backgroundImage: `url(${checkoutHero})` }}>
                 <div className="absolute inset-0 bg-white/20 backdrop-blur-[2px]"></div>
                 <div className="relative z-10 text-center">
@@ -55,85 +46,113 @@ const Checkout = () => {
                 </div>
             </div>
 
-            <div className="container mx-auto px-4 lg:px-20 py-24">
-                <form onSubmit={handlePlaceOrder} className="flex flex-col lg:flex-row gap-16 lg:gap-32">
+            <div className="container mx-auto px-4 lg:px-20 py-16">
+                <form onSubmit={handlePlaceOrder} className="flex flex-col lg:flex-row gap-12">
                     
-                    {/* Left Side: Billing Details */}
-                    <div className="lg:w-1/2">
-                        <h2 className="text-4xl font-bold mb-10">Billing details</h2>
-                        <div className="space-y-8">
-                            <div className="flex flex-col sm:flex-row gap-8">
-                                <div className="flex-1">
-                                    <label className="block font-semibold mb-4">First Name</label>
-                                    <input type="text" name="firstName" required onChange={handleInputChange} className="w-full border border-[#9F9F9F] rounded-lg py-4 px-6 outline-none focus:border-[#B88E2F]" />
-                                </div>
-                                <div className="flex-1">
-                                    <label className="block font-semibold mb-4">Last Name</label>
-                                    <input type="text" name="lastName" required onChange={handleInputChange} className="w-full border border-[#9F9F9F] rounded-lg py-4 px-6 outline-none focus:border-[#B88E2F]" />
-                                </div>
+                    {/* Left: Billing Form */}
+                    <div className="lg:w-[60%] bg-white p-8 rounded-2xl shadow-sm">
+                        <h2 className="text-3xl font-bold mb-8">Billing Details</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="space-y-2">
+                                <label className="text-sm font-semibold">First Name</label>
+                                <input type="text" name="firstName" required onChange={handleInputChange} className="w-full border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-[#B88E2F]/20 focus:border-[#B88E2F] outline-none transition-all" />
                             </div>
-                            <div>
-                                <label className="block font-semibold mb-4">Email address</label>
-                                <input type="email" name="email" required onChange={handleInputChange} className="w-full border border-[#9F9F9F] rounded-lg py-4 px-6 outline-none focus:border-[#B88E2F]" />
+                            <div className="space-y-2">
+                                <label className="text-sm font-semibold">Last Name</label>
+                                <input type="text" name="lastName" required onChange={handleInputChange} className="w-full border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-[#B88E2F]/20 focus:border-[#B88E2F] outline-none transition-all" />
                             </div>
-                            <div>
-                                <label className="block font-semibold mb-4">Street address</label>
-                                <input type="text" name="address" required onChange={handleInputChange} className="w-full border border-[#9F9F9F] rounded-lg py-4 px-6 outline-none focus:border-[#B88E2F]" />
+                            <div className="md:col-span-2 space-y-2">
+                                <label className="text-sm font-semibold">Phone Number</label>
+                                <input type="tel" name="phone" required onChange={handleInputChange} className="w-full border border-gray-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-[#B88E2F]/20 focus:border-[#B88E2F] outline-none transition-all" placeholder="017XXXXXXXX" />
+                            </div>
+                            <div className="md:col-span-2 space-y-2">
+                                <label className="text-sm font-semibold">Full Address</label>
+                                <textarea name="address" required onChange={handleInputChange} className="w-full border border-gray-200 rounded-xl py-3 px-4 h-32 focus:ring-2 focus:ring-[#B88E2F]/20 focus:border-[#B88E2F] outline-none transition-all" />
                             </div>
                         </div>
                     </div>
 
-                    {/* Right Side: Order Summary & Gateway Options */}
-                    <div className="lg:w-1/2 pt-16 lg:pt-20">
-                        <div className="border-b border-[#D9D9D9] pb-8 mb-8">
-                            <div className="flex justify-between items-center mb-4 font-bold text-2xl">
-                                <h3>Product</h3>
-                                <h3>Subtotal</h3>
-                            </div>
-                            <div className="flex justify-between items-center mb-4">
-                                <p className="text-[#9F9F9F]">Asgaard sofa <span className="text-black text-xs font-bold ml-2">X 1</span></p>
-                                <p>Rs. 250,000.00</p>
-                            </div>
-                            <div className="flex justify-between items-center">
-                                <p className="text-xl">Total</p>
-                                <p className="text-2xl font-bold text-[#B88E2F]">Rs. 250,000.00</p>
-                            </div>
-                        </div>
-
-                        {/* Payment Selection Logic */}
-                        <div className="space-y-6">
-                            <div className="flex items-center gap-4 cursor-pointer" onClick={() => setPaymentMethod('bank')}>
-                                <div className={`w-4 h-4 rounded-full border-2 ${paymentMethod === 'bank' ? 'bg-black border-black' : 'border-[#9F9F9F]'}`}></div>
-                                <span className={paymentMethod === 'bank' ? 'font-medium' : 'text-[#9F9F9F]'}>Direct Bank Transfer</span>
-                            </div>
+                    {/* Right: Order Summary & Enhanced Payment UI */}
+                    <div className="lg:w-[40%] space-y-8">
+                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                            <h3 className="text-xl font-bold mb-6">Order Summary</h3>
                             
-                            {paymentMethod === 'bank' && (
-                                <p className="text-[#9F9F9F] font-light text-sm leading-relaxed">
-                                    Make your payment directly into our bank account. Please use your Order ID as the reference.
-                                </p>
-                            )}
-
-                            <div className="flex items-center gap-4 cursor-pointer" onClick={() => setPaymentMethod('ssl')}>
-                                <div className={`w-4 h-4 rounded-full border-2 ${paymentMethod === 'ssl' ? 'bg-black border-black' : 'border-[#9F9F9F]'}`}></div>
-                                <span className={paymentMethod === 'ssl' ? 'font-medium' : 'text-[#9F9F9F]'}>Local Payment (bKash / Nagad)</span>
+                            <div className="space-y-4 border-b border-gray-100 pb-6 mb-6">
+                                <div className="flex justify-between text-[#9F9F9F]">
+                                    <span>Asgaard sofa x 1</span>
+                                    <span className="text-black font-medium">৳ 250,000</span>
+                                </div>
+                                <div className="flex justify-between text-lg font-bold">
+                                    <span>Total</span>
+                                    <span className="text-[#B88E2F]">৳ 250,000</span>
+                                </div>
                             </div>
 
-                            <div className="flex items-center gap-4 cursor-pointer" onClick={() => setPaymentMethod('stripe')}>
-                                <div className={`w-4 h-4 rounded-full border-2 ${paymentMethod === 'stripe' ? 'bg-black border-black' : 'border-[#9F9F9F]'}`}></div>
-                                <span className={paymentMethod === 'stripe' ? 'font-medium' : 'text-[#9F9F9F]'}>Stripe (International Card)</span>
-                            </div>
-                        </div>
+                            <h4 className="font-bold mb-4 text-sm uppercase tracking-wider text-gray-500">Select Payment Method</h4>
+                            
+                            <div className="space-y-4">
+                                {/* Option 1: Mobile Banking (SSLCommerz) */}
+                                <div 
+                                    onClick={() => setPaymentMethod('ssl')}
+                                    className={`relative p-5 rounded-xl border-2 cursor-pointer transition-all flex items-center justify-between ${paymentMethod === 'ssl' ? 'border-[#B88E2F] bg-[#B88E2F]/5' : 'border-gray-100 hover:border-gray-200'}`}
+                                >
+                                    <div className="flex items-center gap-4">
+                                        <div className="p-2 bg-white rounded-lg shadow-sm text-[#B88E2F]"><Smartphone size={24}/></div>
+                                        <div>
+                                            <p className="font-bold text-sm">Mobile Banking</p>
+                                            <p className="text-[10px] text-gray-400">bKash, Nagad, Rocket, Upay</p>
+                                        </div>
+                                    </div>
 
-                        <div className="mt-12">
-                            <button type="submit" className="w-full py-4 border border-black rounded-xl text-xl hover:bg-black hover:text-white transition-all">
-                                Place order
+                                    {paymentMethod === 'ssl' && <div className="absolute -top-2 -right-2 bg-[#B88E2F] text-white rounded-full p-1"><ShieldCheck size={14}/></div>}
+                                </div>
+
+                                {/* Option 2: Cards (Stripe) */}
+                                <div 
+                                    onClick={() => setPaymentMethod('stripe')}
+                                    className={`relative p-5 rounded-xl border-2 cursor-pointer transition-all flex items-center justify-between ${paymentMethod === 'stripe' ? 'border-[#B88E2F] bg-[#B88E2F]/5' : 'border-gray-100 hover:border-gray-200'}`}
+                                >
+                                    <div className="flex items-center gap-4">
+                                        <div className="p-2 bg-white rounded-lg shadow-sm text-[#B88E2F]"><CreditCard size={24}/></div>
+                                        <div>
+                                            <p className="font-bold text-sm">Card Payment</p>
+                                            <p className="text-[10px] text-gray-400">Visa, Mastercard, AMEX</p>
+                                        </div>
+                                    </div>
+                                    {paymentMethod === 'stripe' && <div className="absolute -top-2 -right-2 bg-[#B88E2F] text-white rounded-full p-1"><ShieldCheck size={14}/></div>}
+                                </div>
+
+                                {/* Option 3: Bank Transfer */}
+                                <div 
+                                    onClick={() => setPaymentMethod('bank')}
+                                    className={`relative p-5 rounded-xl border-2 cursor-pointer transition-all flex items-center justify-between ${paymentMethod === 'bank' ? 'border-[#B88E2F] bg-[#B88E2F]/5' : 'border-gray-100 hover:border-gray-200'}`}
+                                >
+                                    <div className="flex items-center gap-4">
+                                        <div className="p-2 bg-white rounded-lg shadow-sm text-[#B88E2F]"><Landmark size={24}/></div>
+                                        <div>
+                                            <p className="font-bold text-sm">Bank Transfer</p>
+                                            <p className="text-[10px] text-gray-400">Direct Manual Deposit</p>
+                                        </div>
+                                    </div>
+                                    {paymentMethod === 'bank' && <div className="absolute -top-2 -right-2 bg-[#B88E2F] text-white rounded-full p-1"><ShieldCheck size={14}/></div>}
+                                </div>
+                            </div>
+
+                            <button 
+                                type="submit" 
+                                disabled={loading}
+                                className="w-full mt-8 py-4 bg-black text-white rounded-xl font-bold hover:bg-[#B88E2F] transition-all flex items-center justify-center gap-3 disabled:bg-gray-400"
+                            >
+                                {loading ? <><Loader2 className="animate-spin" /> Securing Session...</> : "Complete Purchase"}
                             </button>
+                            
+                            <p className="text-[10px] text-gray-400 mt-4 text-center">
+                                Your payment is secured with 256-bit SSL encryption.
+                            </p>
                         </div>
                     </div>
                 </form>
             </div>
-            
-            {/* ... Features Footer ... */}
         </div>
     );
 };
